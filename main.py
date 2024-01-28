@@ -1,9 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static/styles.css")
 
-@app.route("/")
+
+
+@app.route("/me")
 def hello_world():
     return """
     <p>HELLO, WORLD</p>
@@ -13,7 +15,11 @@ def hello_world():
 def randomBit():
     return "<a href='/'>Back</a>"
 
-@app.route("/me")
+@app.route("/")
+def indexHTML():
+    return render_template("index.html")
+
+@app.route("/meo")
 def me():
     lol = hello_world()
-    return f"HI, IAM ME<br>{randomBit()}"
+    return f"HI, IAM ME<br>{randomBit()}{indexHTML()}"
