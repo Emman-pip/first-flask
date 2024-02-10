@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='styles.css') }}">
+    {% block head %} {% endblock head %}
+  </head>
+  <body>
+    <h1>Message Board</h1>
+    {% include 'nav.html'  %}
+    <section>{% block header %} {% endblock header %}</section>
+
+    <main>
+      {% block content %}
+      <p>No messages</p>
+      {% endblock content %}
+    </main>
+  </body>
+</html>
