@@ -12,8 +12,8 @@ def create_app():
     
     db.init_app(app)
     
-    app.register_blueprint(pages.bp)
     app.register_blueprint(posts.bp)
+    app.register_blueprint(pages.bp)
     
     print(f"Current environment: {os.getenv('ENVIRONMENT')}")
     print(f"Using Database: {app.config.get('DATABASE')}")
