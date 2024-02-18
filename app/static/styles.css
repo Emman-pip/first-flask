@@ -46,6 +46,9 @@ nav > ul > li > ul {
 }
 
 nav .left {
+    position: fixed;
+    top: 0;
+    right: 0;
     color: var(--primary-color);
     background-color:#ffe3f186;
     padding-block: 2rem;
