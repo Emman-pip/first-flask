@@ -8,11 +8,33 @@
 <main class="missions">
     <section class="tables">
         <h1>Moon Mission</h1>
-        {% for mission in missions %}
-            <p>
-                {{ mission.spacecraft }}
-            </p>
-        {% endfor %}    
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Spacecreaft Used</th>
+                        <th>Launch Date</th>
+                        <th>Operator</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for mission in missions %}
+                        <tr>
+                            <td>{{ mission.spacecraft }}</td>
+                            <td>{{ mission.launchDate }}</td>
+                            <td>{{ mission.operator }}</td>
+                            {% if mission.outcome == True %}
+                                <td>Success</td>
+                            {% else %}
+                                <td>Failed</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}    
+                </tbody>
+                
+            </table>
+        </div>
     </section>
 </main>
 {% endblock body %}

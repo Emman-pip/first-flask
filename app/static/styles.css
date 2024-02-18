@@ -142,3 +142,26 @@ nav .icon {
         transform: translateX(-100%);
     }
 }
+
+/* MISSIONS */
+
+.mission .table {
+    overflow-x: scroll;
+}
+.missions .table > table {
+    padding: 1rem;
+}
+
+.missions .table > table tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+.missions .table > table th {
+    padding: 0.6rem;
+    font-weight: 900;
+}
+
+.missions .table > table td {
+    padding: 0.3rem;
+    text-overflow: ellipsis;
+}
