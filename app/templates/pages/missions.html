@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Moon Missions</title>
+{% endblock head %}
+
+
+{% block body %}
+<main class="missions">
+    <section class="tables">
+        <h1>Moon Mission</h1>
+        {% for mission in missions %}
+            <p>
+                {{ mission.spacecraft }}
+            </p>
+        {% endfor %}    
+    </section>
+</main>
+{% endblock body %}
