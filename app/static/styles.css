@@ -192,3 +192,18 @@ section.tables {
     text-overflow: ellipsis;
 
 }
+
+.aboutUs {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 80vh;
+    min-height: 80lvh;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.aboutUs > * {
+    width: min(40rem, 80vw);
+}

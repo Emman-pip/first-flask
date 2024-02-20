@@ -20,3 +20,7 @@ def mission():
     # data2 = app.db.session.execute(app.db.select(app.missions)).scalar()
     # data = app.missions.query.group_by(app.missions.operator).order_by(func.count(app.missions.operator)).all()
     return render_template('pages/missions.html', missions=data, countries=labels, data=numbers)
+
+@bp.route('/aboutus')
+def aboutUs():
+    return render_template('pages/aboutUs.html')

@@ -10,32 +10,6 @@ const navToggle = () => {
   });
 };
 
-const charts = () => {
-    const ctx = document.getElementById('bdfar');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        // labels: {{ labels }},
-        datasets: [{
-          label: '# of Votes',
-          // data: {{ data }},
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-}
-
-
-
 (()=>{
-  charts();
     navToggle();
 })()
