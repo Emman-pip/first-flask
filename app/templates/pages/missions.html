@@ -1,11 +1,38 @@
 {% extends "base.html" %}
 {% block head %}
 <title>Moon Missions</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock head %}
 
 
 {% block body %}
 <main class="missions">
+    <section class="charts">
+        <canvas id="bar"></canvas>
+        <script>
+const ctx = document.getElementById('bar').getContext("2d");
+  
+const barchart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: {{ countries | safe}},
+        datasets: [{
+          label: '# of moon missions per operator',
+          data: {{ data | safe }},
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsiveness: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+        </script>
+    </section>
     <section class="tables">
         <h1>Moon Missions</h1>
         <div class="table">
@@ -37,6 +64,7 @@
         </div>
     </section>
 
-
 </main>
+
+   
 {% endblock body %}

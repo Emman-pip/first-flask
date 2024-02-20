@@ -151,6 +151,22 @@ section.tables {
     align-items: center;
     justify-content: center;
     padding: 1rem;
+
+    overflow-x: scroll;
+}
+
+.missions {
+    padding: 0.3rem;
+}
+
+.missions .charts {
+    max-height: 80vh;
+    max-height: 80lvh;
+}
+
+.missions #bar {
+    max-height: 80vh;
+    max-height: 80lvh;
 }
 
 .mission .table {
@@ -171,6 +187,8 @@ section.tables {
 }
 
 .missions .table > table td {
-    padding: 0.3rem;
+    padding: 0.5rem;
+    text-align: center;
     text-overflow: ellipsis;
+
 }
