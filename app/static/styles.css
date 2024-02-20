@@ -141,6 +141,23 @@ nav .icon {
         background-color: var(--accent-color);
         transform: translateX(-100%);
     }
+
+    .three,
+    .two,
+    .one {
+        transition: transform 0.3s;
+    }
+    .first {
+        transform: rotate(45deg) translateY(0.5rem) translateX(0.4rem);
+    }
+
+    .second {
+        transform: rotate(45deg);
+    }
+
+    .third {
+        transform: rotate(-45deg) translateY(-0.6rem) translateX(0.4rem);
+    }
 }
 
 /* MISSIONS */
