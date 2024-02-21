@@ -6,35 +6,51 @@
 
 
 {% block body %}
+<h1 style="text-align: center; margin-top: rem">Moon Missions</h1>
 <main class="missions">
     <section class="charts">
         <canvas id="bar"></canvas>
         <script>
-const ctx = document.getElementById('bar').getContext("2d");
+    const ctx = document.getElementById('bar').getContext("2d");
   
-const barchart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: {{ countries | safe}},
-        datasets: [{
-          label: '# of moon missions per operator',
-          data: {{ data | safe }},
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsiveness: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+    const barchart = new Chart(ctx, {
+          type: 'bar',
+        data: {
+            labels: {{ countries | safe}},
+            datasets: [{
+            label: '# of moon missions per operator',
+            data: {{ data | safe }},
+            borderWidth: 1
+            }]
+        },
+        options: {
+            responsiveness: true,
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
         }
-      }
-    });
+        });
+        </script>
+        <canvas id="line"></canvas>
+        <script>
+            const lineCanvas = document.getElementById("line").getContext("2d");
+            
+            const lineChart = new Chart(lineCanvas, {
+                type: 'line',
+                data: {
+                    labels: {{ years | safe }},
+                    datasets: [{
+                        label: 'Moon missions per year',
+                        data: {{ frequency | safe }},
+
+                    }]
+                }
+            })
         </script>
     </section>
     <section class="tables">
-        <h1>Moon Missions</h1>
         <div class="table">
             <table>
                 <thead>

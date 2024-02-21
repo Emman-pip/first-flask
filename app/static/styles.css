@@ -173,12 +173,14 @@ section.tables {
 }
 
 .missions {
-    padding: 0.3rem;
+   padding: 0.3rem;
 }
-
+        
 .missions .charts {
-    max-height: 80vh;
-    max-height: 80lvh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap:2rem;
 }
 
 .missions #bar {
